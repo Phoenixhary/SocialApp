@@ -1,4 +1,8 @@
-import React, { useState } from 'react'
+'use client'
+import {get, ref} from 'firebase/database';
+import React, { useEffect, useState } from 'react';
+import {database} from './firebaseConfig';
+// import StartFirebase from './firebase';
 import ConnectButton from './ConnectButton';
 import SearchBar from './SearchBar';
 import SaySomethingBox from './SaySomethingBox';
@@ -8,8 +12,30 @@ import Sidebar from './Sidebar';
 import MobileSidebar from './MobileSidebar';
 import MenuIcon from '@mui/icons-material/Menu';
 
+
+
+
 const Feed = () => {
-    const [nav, setNav] = useState(true)
+    const [nav, setNav] = useState(true);
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const usersRef = ref(database, 'users');
+        get(usersRef).then((snapshot) => {
+          if (snapshot.exists()) {
+            const usersArray = Object.entries(snapshot.val()).map(([id, data]) =>({
+              id,
+              ...data,
+            }));
+            setUsers(usersArray);
+          } else {
+            console.log("no data available");
+          }
+        }) .catch((error) => {
+          console.error(error);
+        });
+
+    }, []);
 
   return (
     <div id='feed' className='
@@ -30,11 +56,16 @@ const Feed = () => {
           </div>
                       {/* Post */}
           <div>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+            {users.map( user => (
+              <Post 
+                  displayName={user.displayName}
+                  userName={user.userName}
+                  verified={user.verified}
+                  text={user.text}
+                  image={user.image}
+              />
+            ) )}
+            
           </div>
       </div>
               {/* Overlay */}

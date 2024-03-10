@@ -1,9 +1,15 @@
+import {database} from './firebaseConfig';
+import {get, ref, set} from 'firebase/database';
 import { Avatar, Button } from '@mui/material';
-import React from 'react'
+import React, {useState} from 'react';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import TopSelectOption from './TopSelectOption';
 
+
 const SaySomethingBox = () => {
+      const [postMsg, setPostmsg] = useState("");
+      
+
   return (
     <div className=''>
       <div className='flex justify-around items-center mx-auto p-2 font-medium font-sans text-gray-600'>
@@ -18,7 +24,8 @@ const SaySomethingBox = () => {
         <form>
             <div className='flex p-4 items-center '>
                 <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
-                <textarea className='overflow-hidden outline-none px-[10px] py-2  rounded-lg h-32 border-2 mx-6 md:min-w-[390px] min-w-[290px] ' placeholder='Say something' type='text' />
+                <textarea onChange={(e) => setPostmsg(e.target.value)} value={postMsg}
+                 className='overflow-hidden outline-none px-[10px] py-2  rounded-lg h-32 border-2 mx-6 md:min-w-[390px] min-w-[290px] ' placeholder='Say something' type='text' />
 
                 <div className='mb-2 hidden md:block'>
                   <h1 className='font-medium text-gray-700 font-sans m-4 whitespace-nowrap'>#Trending hashtags</h1>
@@ -29,7 +36,8 @@ const SaySomethingBox = () => {
                 </div>
             </div>
            <div className=' flex justify-center pb-2 md:mr-[120px] ml-[80px] md:ml-[2px] '>
-             <button className='md:w-[385px] w-[270px]  rounded-md opacity-80 p-1 hover:opacity-90 bg-[#439398] text-white font-medium'  > post </button>
+             <button 
+             className='md:w-[385px] w-[270px]  rounded-md opacity-80 p-1 hover:opacity-90 bg-[#439398] text-white font-medium'  > post </button>
               </div>
         </form>
         

@@ -15,7 +15,7 @@ const Sidebar = () => {
      </div>
 
         <div className='p-20'>
-          <div className='hover:w-[140px]'> <SidebarOption Icon={LogoutIcon}  text="Logout" /></div>
+          <div className='hover:w-[120px]'> <SidebarOption Icon={LogoutIcon}  text="Logout" /></div>
         </div>
         
     </div>
