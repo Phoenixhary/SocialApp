@@ -8,7 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 const MobileSidebar = () => {
   return (
     <div className='max-w-[280px] opacity-90 md:hidden  md:flex-col md:flex-[0.2] justify-between bg-[#ECF4F5] h-screen max-w-[] border-2 p-2'>
-        <CloseIcon fontSize='large' /> 
+        {/* <div> <CloseIcon fontSize='large' />  </div> */}   
       <div className='p-[60px]'>
          <div className='mb-4'> <SidebarOption active Icon={RssFeedIcon} text="Feed" /> </div>
          <div className='hover:w-[162px]' > <SidebarOption  Icon={DynamicFeedIcon} text="Create space" /> </div>

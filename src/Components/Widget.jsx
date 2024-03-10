@@ -19,13 +19,13 @@ const Widget = () => {
            <div className='text-[21px] text-gray-700 p-1 mx-2 font-sans font-medium'> Recommended Topics</div>
            <div className='grid grid-cols-3 p-2 '>
                 <Recommended Rtext="Wallet" />
-                <Recommended Rtext="Games" />
+                <Recommended Rtext="Ronaldo" />
                 <Recommended Rtext="web 3.0" />
                 <Recommended Rtext="Games" />
-                <Recommended Rtext="Games" />
+                <Recommended Rtext="ETH" />
                 <Recommended Rtext="Bitcoin" />
-                <Recommended Rtext="Games" />
-                <Recommended Rtext="Games" />
+                <Recommended Rtext="Bike" />
+                <Recommended Rtext="Books" />
            </div>
            <div className='font-sans text-[#439398] px-2 mb-4 mt-2 font-medium'> Show more topics..</div>
       </div>
