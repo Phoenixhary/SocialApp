@@ -1,15 +1,18 @@
 import React from 'react';
 import bgImage from '../assests/bg-image1.png';
-import ConnectButton from './ConnectButton';
+// import ConnectButton from './ConnectButton';
+
 import RubleCoin from '../assests/RubleCoin.png';
 import Chat from '../assests/Chat.png';
 import { Link } from "react-router-dom";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const DisconnectedPage = () => {
   return (
     <div className='h-screen'>
       <div className='p-2 flex justify-end'>
-         <ConnectButton />
+         {/* <ConnectButton /> */}
+         <ConnectButton /> 
        </div>
     <div style={{
       width: '100%',

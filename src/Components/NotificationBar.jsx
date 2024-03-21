@@ -3,7 +3,8 @@ import React from 'react'
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import RubleCoins from './RubleCoins';
-import ConnectButton from './ConnectButton';
+// import ConnectButton from './ConnectButton';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 const NotificationBar = () => {
   return (
